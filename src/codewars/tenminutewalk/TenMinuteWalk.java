@@ -1,11 +1,11 @@
 package codewars.tenminutewalk;
 
 public class TenMinuteWalk {
-	public boolean isValidWalk(String[] directions) {
+	public static boolean isValid(char[] walk) {
 
 		// requirement is to get back to the starting point in 10 minutes
 		// so check that there are exactly 10 instructions
-		if (directions.length != 10) {
+		if (walk.length != 10) {
 			System.out.println("Must be exactly 10 directions");
 			return false;
 		}
@@ -15,18 +15,18 @@ public class TenMinuteWalk {
 		int ypos = 0;
 		
 		//now process the directions. Per instructions will always be valid directions
-		for (String direction : directions) {
+		for (char direction : walk) {
 			switch (direction) {
-			case "n":
+			case 'n':
 				ypos++;
 				break;
-			case "s":
+			case 's':
 				ypos--;
 				break;
-			case "e":
+			case 'e':
 				xpos++;
 				break;
-			case "w":
+			case 'w':
 				xpos--;
 				break;
 
