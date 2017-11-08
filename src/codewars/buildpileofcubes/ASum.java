@@ -81,13 +81,16 @@ public class ASum {
 
 		System.out.println(String.format("CalcVolume for %d cubes", numCubes));
 		long buildingVolume = 0;
+		/*
 		for (int i = 1; i <= numCubes; i++) {
 			long blockVolume = (long) Math.pow(i, 3);
 			buildingVolume += blockVolume;
 			// System.out.println(String.format("Block %d Volume %d total volume %d", i,
 			// blockVolume, buildingVolume));
 		}
-
+*/
+		buildingVolume =(long) (Math.pow(numCubes, 2) * Math.pow(numCubes+1, 2)/4);
+		
 		return buildingVolume;
 	}
 }
