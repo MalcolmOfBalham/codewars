@@ -1,5 +1,7 @@
 package codewars.buildpileofcubes;
 
+import java.math.BigDecimal;
+
 /*Your task is to construct a building which will be a pile of n cubes. 
  * The cube at the bottom will have a volume of n^3, the cube above will 
  * have volume of (n-1)^3 and so on until the top which will have a volume of 1^3.
@@ -25,7 +27,11 @@ public class ASum {
         int increment = 100;
         boolean numCubesFound = false;
         while (true) {
-            long calculatedVolume = (long) (Math.pow(numCubes, 2) * Math.pow(numCubes + 1, 2) / 4);
+            // long calculatedVolume = (long)(((Math.pow(numCubes, 2) *
+            // Math.pow(numCubes + 1, 2)) / 4));
+            long calculatedVolume = new BigDecimal(Math.pow(numCubes, 2)).multiply(new BigDecimal(Math.pow(numCubes + 1, 2)))
+                    .divide(new BigDecimal(4)).longValue();
+
             System.out.println(String.format("numCubes %d calculatedVol %d targetVol %d lastIncrement %d", numCubes,
                     calculatedVolume, buildingVolume, increment));
 
@@ -88,7 +94,16 @@ public class ASum {
          * System.out.println(String.format("Block %d Volume %d total volume %d"
          * , i, // blockVolume, buildingVolume)); }
          */
-        buildingVolume = (long) (Math.pow(numCubes, 2) * Math.pow(numCubes + 1, 2) / 4);
+
+        System.out.println(Math.pow(numCubes, 2));
+        System.out.println(Math.pow(numCubes, 2));
+        BigDecimal a = new BigDecimal(Math.pow(numCubes, 2));
+        BigDecimal b = new BigDecimal(Math.pow(numCubes + 1, 2));
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(a.multiply(b).divide(new BigDecimal(4)).longValue());
+        buildingVolume = new BigDecimal(Math.pow(numCubes, 2)).multiply(new BigDecimal(Math.pow(numCubes + 1, 2)))
+                .divide(new BigDecimal(4)).longValue();
 
         return buildingVolume;
     }

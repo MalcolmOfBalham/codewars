@@ -8,8 +8,8 @@ public class ASumTest {
 
     @Test
     public void testCalcVolume() {
-        assertEquals(1071225, ASum.calcVolume(45));
-
+        assertEquals(1071225, (long)ASum.calcVolume(45));
+        assertEquals(2304422822859502500L, (long)ASum.calcVolume(55100));
     }
 
     @Test
@@ -34,15 +34,16 @@ public class ASumTest {
         assertEquals(3568, ASum.findNb(40539911473216L));
     }
 
-/*    @Test
+    @Test
     public void test5() {
-        assertEquals(-1, ASum.findNb(2304422822859502500));
+        assertEquals(-1, ASum.findNb(1789611650149505626L));
     }
+    
     @Test
     public void test6() {
-        assertEquals(-1, ASum.findNb(2160060523386798096));
+        assertEquals(55100, ASum.findNb(2304422822859502500L));
     }
-*/
+
     @Test
     public void testGetNextIncement() throws Exception {
         assertEquals(100, ASum.getNextIncrement(1000, 900, 100));
