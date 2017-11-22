@@ -6,10 +6,6 @@ import org.junit.Test;
 
 public class StringToCamelCaseTest {
 
-    @Test
-    public void test() {
-        fail("Not yet implemented");
-    }
 
     @Test
     public void testSomeUnderscoreLowerStart() {
@@ -23,6 +19,11 @@ public class StringToCamelCaseTest {
       System.out.println("input: "+input);      
       assertEquals("theStealthWarrior", Solution.toCamelCase(input));
     }
-    
+    @Test
+    public void testSomeDashLowerStartLowerInternal() {
+      String input = "the-stealth-warrior";
+      System.out.println("input: "+input);      
+      assertEquals("theStealthWarrior", Solution.toCamelCase(input));
+    }    
     
 }
